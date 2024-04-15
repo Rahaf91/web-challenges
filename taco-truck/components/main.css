@@ -1,0 +1,10 @@
+main {
+    background-color: var(--main-bg);
+    color: var( --main-text)
+}
+h2 {
+  display: inline-block;
+ background-color: var(--main-title-bg);
+padding: 5px; 
+margin-left: 40px;
+}

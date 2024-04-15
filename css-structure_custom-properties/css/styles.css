@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --highlight-color: rgb(255 74 17);
+  --secondary-text-color: rgb(255 255 255);
+  --primary-color:rgb(37 38 41);
+  --letter-spacing:0.025em;
+  --border-radius: 4px;
+}
+body {
+  margin: 0;
+  font-family: system-ui;
+  line-height: 1.2;
+}
+
+header {
+  background: var( --primary-color);
+}
+
+h1 {
+  text-align: center;
+  color: var( --secondary-text-color);
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  padding-block: 16px;
+}
+
+h2 {
+  letter-spacing: var(--letter-spacing);
+}
+
+strong {
+  color: var(--highlight-color);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 16px;
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+article {
+  flex: 1 200px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+figure {
+  width: min(100%, 400px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 10px;
+  background-color: var(--highlight-color);
+  border-radius: var( --border-radius);
+}
+
+figcaption {
+  color: var( --secondary-text-color);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+a {
+  display: inline-block;
+  font-size: smaller;
+  padding: 8px;
+  border-radius: var( --border-radius);
+  background-color: var(--highlight-color);
+  color: var( --secondary-text-color);
+}
+
+a:hover,
+a:focus-visible {
+  background-color:var( --primary-color);
+  text-decoration: none;
+}
+
+mark {
+  background-color: var(--highlight-color);
+  color: var( --secondary-text-color);
+  border-radius: var( --border-radius);
+  letter-spacing: 0.025em;
+}
+
+::selection {
+  background-color: #252629;
+  color: var(--highlight-color);
+}

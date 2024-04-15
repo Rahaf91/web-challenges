@@ -1,0 +1,13 @@
+
+
+.card {
+background-color: var(--card-bg);
+list-style-type: none;
+width:45%;
+border-radius: 10px;
+
+}
+
+h3,h4,p {
+   margin-left: 10px;
+}
