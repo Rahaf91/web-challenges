@@ -11,6 +11,7 @@ console.clear();
 
 const postTitle = "We are now  huge community";
 const postText= "We are thrilled to announce that we are now more than million members in our group, we have learned so much,but the most precious is that we have built so much connections together. Thank you really from the bottom of our hearts for being there!"
+const postUser="Rahaf"
 let postLikesnumbers= 100000;
 const isReported= true;
 
@@ -21,6 +22,7 @@ const isReported= true;
 // --v-- write your code here --v--
 console.log (postTitle);
 console.log (postText);
+console.log (postUser);
 console.log (postLikesnumbers);
 console.log (isReported);
 
