@@ -1,0 +1,75 @@
+body {
+  background-color: rgb(236, 229, 163);
+}
+/*............No flex on the children.....................*/
+
+.container {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 3px;
+}
+.container_item {
+  background-color: lightskyblue;
+  width: 20px;
+  text-align: center;
+  border-radius: 3px;
+}
+/*............Equally Spaced.....................*/
+.container2 {
+  background-color: green;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 3px;
+}
+
+.container2_item {
+  background-color: lightskyblue;
+  text-align: center;
+  border-radius: 3px;
+  flex-grow: 1;
+}
+
+/*..............One element bigger...................*/
+
+.container3 {
+  background-color: green;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 3px;
+}
+
+.container3_item {
+  background-color: lightskyblue;
+  text-align: center;
+  border-radius: 3px;
+  flex-grow: 1;
+}
+.bigger {
+  flex-grow: 2;
+}
+/*............one element bigger,one even bigger.....................*/
+
+.container4 {
+  background-color: green;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 3px;
+}
+
+.container4_item {
+  background-color: lightskyblue;
+  text-align: center;
+  border-radius: 3px;
+  flex-grow: 1;
+}
+.bigger {
+  flex-grow: 2;
+}
+.even-bigger {
+  flex-grow: 4;
+}
