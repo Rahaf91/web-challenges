@@ -25,11 +25,11 @@ const display = document.querySelector('[data-js="display"]');
 function getGreeting() {
   // Code here
   const time = new Date().getHours();
-  if (time >= 6 && time < 12) {
+  if (time >= 6 && time <= 12) {
     return "Good Morning";
-  } else if (time >= 13 && time < 18) {
+  } else if (time >= 13 && time <= 18) {
     return "Good Afternoon";
-  } else if (time >= 19 && time < 22) {
+  } else if (time >= 19 && time <= 22) {
     return "Good Evening";
   } else {
     return "Good Night";
