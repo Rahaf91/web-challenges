@@ -76,6 +76,13 @@ function isOddAndSmall(number) {
   return true;
 };*/
 
-const add3 = (a, b, c) => a + b + c;
+function add3(a, b, c) {
+  return a + b + c;
+}
 
-const repeat10 = (string) => string.repeat(10);
+//const add3 = (a, b, c) => a + b + c;
+
+function repeat10(string) {
+  return string.repeat(10);
+}
+//const repeat10 = (string) => string.repeat(10);
