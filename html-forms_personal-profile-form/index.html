@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Personal Profile Form</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Create your Personal Profile</h1>
+
+      <form aria-labelledby="title">
+        <p>
+          We want to get to know you! Please enter your personal information.
+        </p>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name" />
+
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" name="last-name" />
+
+          <label for="birthday">Your Birthday:</label>
+          <input type="date" id="birthday" name="date" />
+        </fieldset>
+
+        <p>
+          Can you tell us a little bit more? We want to annoy you with unwanted
+          ads.
+        </p>
+        <fieldset>
+          <legend>Further Information</legend>
+          <label for="favourite-color">Favourite Color:</label>
+          <input
+            type="color"
+            id="favourite-color"
+            name="color"
+            value="#E5430F"
+          />
+
+          <label for="favourite-pet">What's your favourite pet?</label>
+          <select id="favourite-pet" name="pet">
+            <option value="" selected disabled>
+              --Please choose an option--
+            </option>
+            <option value="no-pet">I don't like animals</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="dolphin">Dolphin</option>
+            <option value="other">Other</option>
+          </select>
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
