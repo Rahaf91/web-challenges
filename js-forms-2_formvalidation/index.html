@@ -26,7 +26,9 @@
       <form data-js="form">
         <fieldset>
           <legend>Personal Information</legend>
-          <label for="first-name">First Name</label>
+          <label for="first-name"
+            >First Name<span style="color: red">*</span></label
+          >
           <input
             type="text"
             name="firstName"
@@ -37,7 +39,9 @@
             maxlength="30"
           />
 
-          <label for="last-name">Last Name</label>
+          <label for="last-name"
+            >Last Name<span style="color: red">*</span></label
+          >
           <input
             type="text"
             name="lastName"
@@ -48,16 +52,18 @@
             maxlength="30"
           />
 
-          <label for="age">Age</label>
+          <label for="age">Age<span style="color: red">*</span></label>
           <input type="number" name="age" id="age" min="14" />
 
-          <label for="email">Email</label>
+          <label for="email">Email<span style="color: red">*</span></label>
           <input type="email" name="email" id="email" />
         </fieldset>
 
         <fieldset>
           <legend>Your complaint</legend>
-          <label for="complaint">What went wrong?</label>
+          <label for="complaint"
+            >What went wrong?<span style="color: red">*</span></label
+          >
           <select name="complaint" id="complaint">
             <option value="nothing" selected>
               Nothing, everything is fine!
@@ -88,7 +94,9 @@
             value="100"
           />
 
-          <label for="order-date">Order Date</label>
+          <label for="order-date"
+            >Order Date<span style="color: red">*</span></label
+          >
           <input type="date" name="orderDate" id="order-date" />
 
           <label for="terms-of-service">
