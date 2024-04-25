@@ -21,19 +21,14 @@ const inputColor = document.querySelector('[ data-js="input-color"]');
 const inputRadius = document.querySelector('[ data-js="input-radius"]');
 const inputRotation = document.querySelector('[ data-js="input-rotation"]');
 
-inputColor.addEventListener("change", newBox);
-inputRadius.addEventListener("change", newBox);
-inputRotation.addEventListener("change", newBox);
+inputColor.addEventListener("input", () => {
+  box.style.backgroundColor = `hsl(${inputColor.value},80% ,50%)`;
+});
 
-function newBox() {
-  const colorValue = inputColor.value;
-  const radiusValue = inputRadius.value;
-  const rotationValue = inputRotation.value;
-  box.style.backgroundColor = `hsl(${colorValue}, 50%, 50%)`;
-  if (radiusValue == inputRadius.max) {
-    box.style.borderRadius = "50%";
-  } else {
-    box.style.borderRadius = `${radiusValue}px`;
-  }
-  box.style.transform = `rotate(${rotationValue}deg)`;
-}
+inputRadius.addEventListener("input", () => {
+  box.style.borderRadius = `${inputRadius.value}%`;
+});
+
+inputRotation.addEventListener("input", () => {
+  box.style.transform = `rotate(${inputRotation.value}deg)`;
+});
