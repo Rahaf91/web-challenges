@@ -16,12 +16,18 @@ function showTosError() {
 function showSuccess() {
   success.removeAttribute("hidden");
 }
+function hideSuccess() {
+  success.setAttribute("hidden", "");
+}
+hideTosError();
+hideSuccess();
 
 tosCheckbox.addEventListener("change", () => {
   if (tosCheckbox.checked) {
     hideTosError();
   } else {
     showTosError();
+    hideSuccess();
   }
 });
 
@@ -29,9 +35,11 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (!tosCheckbox.checked) {
-    return alert("Please agree to our terms of service.");
+    showTosError();
+    return;
+  } else {
+    showSuccess();
   }
 
-  showSuccess();
   alert("Form submitted");
 });
