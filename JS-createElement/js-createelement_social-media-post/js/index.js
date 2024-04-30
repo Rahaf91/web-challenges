@@ -31,7 +31,7 @@ span.textContent = "@username";
 const button = document.createElement("button");
 button.classList.add("post__button");
 button.textContent = "  ♥ Like";
-
+button.addEventListener("click", handleLikeButtonClick);
 document.body.appendChild(mainHeading);
 document.body.appendChild(article);
 article.appendChild(p);
