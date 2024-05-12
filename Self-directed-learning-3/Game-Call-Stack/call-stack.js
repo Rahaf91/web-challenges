@@ -23,7 +23,7 @@ function goHome() {
   if (mealCount === 2) {
     goToGym(); // mealcount is equals to 0 so it will be not called
   } else {
-    watchTV(); // 7- this will be clled and logs let's call it a day bcz mealcount is not 2..it equals to 0
+    watchTV(); // 7- this will be called and logs let's call it a day bcz mealcount is not 2..it equals to 0
   }
 }
 
@@ -41,7 +41,7 @@ function pretendToWork() {
   console.log("🛠️ being busy");
   workedHours = workedHours + 4;
   if (workedHours === 4) {
-    eatLunch(); // 4- now this function will be called and logs lunch with colleages!
+    eatLunch(); // 4- now this function will be called and logs lunch with colleagues!
     pretendToWork(); //5- then it is time to go back work and logs being busy
   } else {
     goHome(); // 6- now this function will be called and logs going back home
