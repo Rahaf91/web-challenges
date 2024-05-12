@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="email.js" defer></script>
+  </head>
+  <body>
+    <main style="background-color: rgb(176, 209, 122)">
+      <h2>Generate Email</h2>
+      <form data-js="generateEmailForm">
+        <label for="firstName">First Name</label>
+        <input name="firstName" id="firstName" required />
+        <label for="lastName">Last Name</label>
+        <input name="lastName" id="lastName" required />
+        <button type="submit" style="background-color: rgb(162, 216, 216)">
+          Generate Email
+        </button>
+      </form>
+      <span
+        data-js="generated-email"
+        style="background-color: rgb(13, 14, 13); color: aliceblue"
+      ></span>
+      <h2>Guess Name from Email</h2>
+      <form data-js="getUserFromEmailForm">
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email" required />
+        <button type="submit" style="background-color: rgb(162, 216, 216)">
+          Get Name
+        </button>
+      </form>
+      <span
+        data-js="guessedName"
+        style="background-color: rgb(13, 14, 13); color: aliceblue"
+      ></span>
+    </main>
+  </body>
+</html>
