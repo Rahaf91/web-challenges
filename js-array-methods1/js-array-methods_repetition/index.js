@@ -46,7 +46,6 @@ const titlesWithDuration = recipes.map((recipe) => {
 const timePerServing = recipes.map(
   (recipe) => recipe.duration / recipe.servings
 ); // [20, 10, 432, 12]
-console.log(timePerServing);
 
 // EXTRA:
 
