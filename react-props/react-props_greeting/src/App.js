@@ -9,7 +9,7 @@ function Greeting({ name, isCoach }) {
 }
 */
 /////////////////////////////////////////////////
-export default function App() {
+/*export default function App() {
   return <Greeting name="Andrea" />;
 }
 function Greeting({ name }) {
@@ -21,5 +21,21 @@ function Greeting({ name }) {
         : name}
       !
     </h1>
+  );
+}*/
+
+///////////////////////////////
+
+export default function App() {
+  return (
+    <div className="App">
+      <Greeting name="Jessica" />
+    </div>
+  );
+}
+function Greeting({ name }) {
+  const coaches = ["Andrea", "Jessica", "Feline"];
+  return (
+    <h1>{coaches.includes(name) ? "Hello, Coach!" : `Hello, ${name}!`}</h1>
   );
 }
