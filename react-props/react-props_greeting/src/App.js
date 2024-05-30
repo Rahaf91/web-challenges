@@ -27,11 +27,7 @@ function Greeting({ name }) {
 ///////////////////////////////
 
 export default function App() {
-  return (
-    <div className="App">
-      <Greeting name="Jessica" />
-    </div>
-  );
+  return <Greeting name="Jessica" />;
 }
 function Greeting({ name }) {
   const coaches = ["Andrea", "Jessica", "Feline"];
