@@ -35,6 +35,6 @@ footer.append(span);
 
 const button = document.createElement("button");
 button.classList.add("post__button");
-button.textContent = "  ♥ Like";
+button.textContent = " ♥ Like";
 button.addEventListener("click", handleLikeButtonClick);
 footer.append(button);
