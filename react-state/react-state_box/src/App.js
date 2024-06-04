@@ -19,12 +19,12 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
-  const [isActive, setisActive] = useState(true);
+  const [isActive, setIsActive] = useState(true);
 
   //let isActive = false;
 
   function handleClick() {
-    setisActive(!isActive);
+    setIsActive(!isActive);
     // Check that the value changes correctly.
     console.log(isActive);
   }
