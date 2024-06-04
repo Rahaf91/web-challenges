@@ -48,11 +48,13 @@ export default function App() {
           </span>
         </button>{" "}
       </div>
-
       <button type="button" onClick={handleReset}>
         Reset
       </button>
-
+      {/*I want to append the emojis directly to the body*/}
+      <p>Emoji Passcode Checker</p>
+      <div className="code-container">{code}</div>
+      {/*.................................................y*/}
       {code === validCode && <p>Valid code!</p>}
     </div>
   );
