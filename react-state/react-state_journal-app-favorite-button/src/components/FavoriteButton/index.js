@@ -7,14 +7,14 @@ export default function FavoriteButton() {
   const [isFavorite, setIsFavorite] = useState(false);
   // this should be a state variable
   //const isFavorite = false;
+  function handleClick() {
+    setIsFavorite(!isFavorite);
+  }
 
   return (
     <button
       className="favorite-button"
-      onClick={() => {
-        console.log("favorite button clicked");
-        setIsFavorite(!isFavorite);
-      }}
+      onClick={handleClick}
       aria-label="favorite"
     >
       {isFavorite ? <StarFilled /> : <Star />}
