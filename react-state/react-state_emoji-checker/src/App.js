@@ -49,7 +49,7 @@ export default function App() {
         </button>{" "}
       </div>
 
-      <button type="button" onClick={setCode}>
+      <button type="button" onClick={handleReset}>
         Reset
       </button>
 
