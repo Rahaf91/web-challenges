@@ -22,7 +22,7 @@ export default function App() {
 
   const validCode = "🐡🐠🐋";
 
-  function handelClick(event) {
+  function handleClick(event) {
     setCode(code + event.target.textContent);
   }
   function handleReset() {
@@ -32,17 +32,17 @@ export default function App() {
   return (
     <div className="container">
       <div className="button-container">
-        <button type="button" onClick={handelClick}>
+        <button type="button" onClick={handleClick}>
           <span role="img" aria-label="Pufferfish">
             🐡
           </span>
         </button>
-        <button type="button" onClick={handelClick}>
+        <button type="button" onClick={handleClick}>
           <span role="img" aria-label="Whale">
             🐋
           </span>
         </button>
-        <button type="button" onClick={handelClick}>
+        <button type="button" onClick={handleClick}>
           <span role="img" aria-label="Clownfish">
             🐠
           </span>
