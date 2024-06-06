@@ -7,16 +7,13 @@ export default function App() {
     { id: 2, name: "Watermelon", color: "LimeGreen" },
     { id: 3, name: "Peach", color: "LightCoral" },
     { id: 4, name: "Banana", color: "yellow" },
+    { id: 5, name: "Blueberry", color: "MidnightBlue" },
   ];
 
   return (
     <div className="app">
       {fruits.map((fruit) => {
-        return (
-          <p key={fruit.id}>
-            <Card name={fruit.name} color={fruit.color} />
-          </p>
-        );
+        return <Card key={fruit.id} name={fruit.name} color={fruit.color} />;
       })}
     </div>
   );
