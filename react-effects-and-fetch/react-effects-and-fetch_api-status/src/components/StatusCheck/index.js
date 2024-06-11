@@ -11,11 +11,7 @@ export default function StatusCheck() {
       setStatusIcon("⏳");
 
       const response = await fetch(apiStatusUrl);
-      if (response.ok) {
-        setStatusIcon("✅");
-      } else {
-        setStatusIcon("❌");
-      }
+      response.ok ? setStatusIcon("✅") : setStatusIcon("❌");
     } catch (error) {
       console.error("Status error:", error);
       setStatusIcon("🚨");
