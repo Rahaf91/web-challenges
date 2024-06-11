@@ -17,7 +17,6 @@ export default function StatusCheck() {
         setStatusIcon("❌");
       }
     } catch (error) {
-      // Log the error and set the status icon to '🚨'
       console.error("Status error:", error);
       setStatusIcon("🚨");
     }
