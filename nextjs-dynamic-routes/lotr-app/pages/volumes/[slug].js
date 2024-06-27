@@ -6,10 +6,9 @@ import Image from "next/image";
 export default function VolumeDetail() {
   const router = useRouter();
   const { slug } = router.query;
-
-  const volumeIndex = volumes.findIndex(
-    ({ slug: volumeSlug }) => volumeSlug === slug
-  );
+  const volumeIndex = volumes.findIndex((volume) => {
+    return volume.slug === slug;
+  });
   const volume = volumes[volumeIndex];
 
   if (!volume) {
