@@ -38,9 +38,11 @@ export default function VolumeDetail() {
         height={230}
       />
       <div>
-        {prevVolume && <Link href={`/volumes/${prevVolume.slug}`}>← Prev</Link>}
+        {prevVolume && (
+          <Link href={`/volumes/${prevVolume.slug}`}>← Previous</Link>
+        )}
         <br />
-        {nextVolume && <Link href={`/volumes/${nextVolume.slug}`}>next →</Link>}
+        {nextVolume && <Link href={`/volumes/${nextVolume.slug}`}>Next →</Link>}
       </div>
     </div>
   );
