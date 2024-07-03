@@ -15,7 +15,7 @@ const initialLights = [
 export default function App({ Component, pageProps }) {
   const [lights, setLights] = useState(initialLights);
 
-  function HandleToggleLight(id) {
+  function toggleLight(id) {
     setLights((lights) =>
       lights.map((light) =>
         light.id === id ? { ...light, isOn: !light.isOn } : light
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         lights={lights}
-        HandleToggleLight={HandleToggleLight}
+        toggleLight={toggleLight}
         handleTurnOff={handleTurnOff}
         handleTurnOn={handleTurnOn}
         allLightsOn={allLightsOn}
