@@ -3,16 +3,20 @@ import { volumes } from "../../lib/data";
 import Image from "next/image";
 
 export default function TheFellowshipOfTheRing() {
-  /*const volume = volumes.find(
+  const volume = volumes.find(
     ({ slug }) => slug === "the-fellowship-of-the-ring"
-  );*/
+  );
   const volumeIndex = volumes.findIndex(
     ({ slug }) => slug === "the-fellowship-of-the-ring"
   );
-  const volume = volumes[volumeIndex];
+
+  if (!volume) {
+    return <div>Volume not found</div>;
+  }
   const prevVolume = volumeIndex > 0 && volumes[volumeIndex - 1];
   const nextVolume =
     volumeIndex < volumes.length - 1 && volumes[volumeIndex + 1];
+
   return (
     <div>
       <Link href="/volumes">← All Volumes</Link>
