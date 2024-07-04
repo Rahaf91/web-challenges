@@ -2,11 +2,13 @@ import Link from "next/link";
 import { volumes } from "../../lib/data";
 import Image from "next/image";
 export default function TheReturnOfTheKing() {
-  // const volume = volumes.find(({ slug }) => slug === "the-return-of-the-king");
+  const volume = volumes.find(({ slug }) => slug === "the-return-of-the-king");
   const volumeIndex = volumes.findIndex(
     ({ slug }) => slug === "the-return-of-the-king"
   );
-  const volume = volumes[volumeIndex];
+  if (!volume) {
+    return <div>Volume not found</div>;
+  }
 
   const prevVolume = volumeIndex > 0 && volumes[volumeIndex - 1];
 

@@ -3,11 +3,13 @@ import { volumes } from "../../lib/data";
 import Image from "next/image";
 
 export default function TheTwoTowers() {
-  //const volume = volumes.find(({ slug }) => slug === "the-two-towers");
+  const volume = volumes.find(({ slug }) => slug === "the-two-towers");
   const volumeIndex = volumes.findIndex(
     ({ slug }) => slug === "the-two-towers"
   );
-  const volume = volumes[volumeIndex];
+  if (!volume) {
+    return <div>Volume not found</div>;
+  }
 
   const prevVolume = volumeIndex > 0 && volumes[volumeIndex - 1];
   const nextVolume =
