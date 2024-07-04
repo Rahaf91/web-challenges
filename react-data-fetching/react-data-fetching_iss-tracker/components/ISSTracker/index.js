@@ -4,7 +4,21 @@ import Map from "../Map/index";
 import useSWR from "swr";
 
 const URL = "https://api.wheretheiss.at/v1/satellites/25544";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = async (url) => {
+  const res = await fetch(url);
+
+  // If the status code is not in the range 200-299,
+  // we still try to parse and throw it.
+  if (!res.ok) {
+    const error = new Error("An error occurred while fetching the data.");
+    // Attach extra info to the error object.
+    error.info = await res.json();
+    error.status = res.status;
+    throw error;
+  }
+
+  return res.json();
+};
 
 export default function ISSTracker() {
   /*const [coords, setCoords] = useState({
@@ -40,20 +54,21 @@ export default function ISSTracker() {
   });
   //console.log("Data:", data);
 
-  if (isLoading) return <div>loading...</div>;
-  if (error) return <div>failed to load</div>;
-  const { longitude, latitude } = data;
+  if (isLoading) return <h1>loading...</h1>;
+  if (error) return <h1>failed to load</h1>;
 
-  function handleRefresh() {
+  //const { longitude, latitude } = data;
+
+  /*function handleRefresh() {
     mutate();
-  }
+  }*/
   return (
     <main>
-      <Map longitude={longitude} latitude={latitude} />
+      <Map longitude={data.longitude} latitude={data.latitude} />
       <Controls
-        longitude={longitude}
-        latitude={latitude}
-        onRefresh={() => handleRefresh()} // onRefresh={mutate()}
+        longitude={data.longitude}
+        latitude={data.latitude}
+        onRefresh={() => mutate()}
       />
     </main>
   );
