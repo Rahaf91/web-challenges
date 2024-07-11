@@ -1,24 +1,37 @@
 import useSWR from "swr";
 import Link from "next/link";
+import styled from "styled-components";
+
+const StyledList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+`;
+
+const StyledListItem = styled.li`
+  padding: 10px;
+`;
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function HomePage() {
-  const { data: products, isLoading } = useSWR("/api/products");
+  const { data: products, error } = useSWR("/api/products", fetcher);
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
+  if (error) {
+    return <h1>Failed to load</h1>;
   }
 
   if (!products) {
-    return;
+    return <h1>Product not found</h1>;
   }
 
   return (
-    <ul>
+    <StyledList>
       {products.map((product) => (
-        <li key={product.id}>
+        <StyledListItem key={product.id}>
           <Link href={`/products/${product.id}`}>{product.name}</Link>
-        </li>
+        </StyledListItem>
       ))}
-    </ul>
+    </StyledList>
   );
 }

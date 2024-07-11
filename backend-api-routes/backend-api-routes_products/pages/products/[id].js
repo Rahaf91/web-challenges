@@ -1,7 +1,14 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import styled from "styled-components";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ghostwhite;
+  align-items: center;
+`;
 const fetcher = (url) => fetch(url).then((response) => response.json());
 export default function ProductDetailsPage() {
   const router = useRouter();
@@ -19,14 +26,14 @@ export default function ProductDetailsPage() {
 
   return (
     <>
-      <div>
+      <Container>
         <h1>{data.product} </h1>
-        <p>{data.description}</p>
-        <p>{data.price}</p>
-        <p>{data.currency}</p>
-        <p>{data.category}</p>
-      </div>
-      <Link href="/">Back to all</Link>
+        <p>Discription: {data.description}</p>
+        <p>Price: {data.price}</p>
+        <p>Currency: {data.currency}</p>
+        <p>Category: {data.category}</p>
+      </Container>
+      <Link href="/products">Back to all</Link>
     </>
   );
 }
