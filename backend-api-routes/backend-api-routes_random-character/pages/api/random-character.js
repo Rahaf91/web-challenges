@@ -13,6 +13,10 @@ export default function handler(request, response) {
     twitter: chance.twitter(),
     geohash: chance.geohash(),
   };
-
-  response.status(200).json(character);
+  if (request.method === "GET") {
+    response.status(200).json(character);
+    return;
+  } else {
+    response.status(405).json({ message: "METHOD NOT ALLOWED" });
+  }
 }

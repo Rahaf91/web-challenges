@@ -6,8 +6,12 @@ export default function handler(request, response) {
   const product = getProductById(id);
 
   if (!product) {
-    response.status(404).json({ message: "product not found :(" });
+    response.status(404).json({ message: "product not found" });
   }
 
-  response.status(200).json(product);
+  if (request.method === "GET") {
+    response.status(200).json(product);
+  } else {
+    response.status(405).json({ message: "METHOD NOT ALLOWED" });
+  }
 }
