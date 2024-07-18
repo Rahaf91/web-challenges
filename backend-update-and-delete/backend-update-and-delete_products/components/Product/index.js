@@ -5,6 +5,7 @@ import { StyledLink } from "../Link/Link.styled";
 import Comments from "../Comments";
 import { useState } from "react";
 import ProductForm from "../ProductForm";
+
 export default function Product() {
   const [isEditMode, setIsEditMode] = useState(false);
   const router = useRouter();
@@ -43,9 +44,7 @@ export default function Product() {
 
     if (response.ok) {
       router.push("/");
-      return;
-    }
-    if (!response.ok) {
+    } else {
       console.log("Error:", response.status);
     }
   }
@@ -64,6 +63,7 @@ export default function Product() {
       >
         Edit Product
       </button>
+      <br />
       <button onClick={handleDeleteProduct} disabled={isEditMode}>
         Delete Product
       </button>
