@@ -2,11 +2,27 @@ import dbConnect from "../../../db/connect";
 import Product from "../../../db/models/Product";
 
 export default async function handler(request, response) {
+  try {
+    await dbConnect();
+  } catch (error) {
+    return response
+      .status(500)
+      .json({ error: "Database connection error: " + error.message });
+  }
   await dbConnect();
 
   if (request.method === "GET") {
-    const products = await Product.find();
-    return response.status(200).json(products);
+  }
+
+  if (request.method === "GET") {
+    try {
+      const products = await Product.find();
+      return response.status(200).json(products);
+    } catch (error) {
+      return response
+        .status(500)
+        .json({ error: "Error retrieving products: " + error.message });
+    }
   }
 
   if (request.method === "POST") {
