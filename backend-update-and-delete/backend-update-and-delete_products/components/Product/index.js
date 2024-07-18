@@ -35,6 +35,7 @@ export default function Product() {
     if (response.ok) {
       mutate();
     }
+    event.target.reset();
   }
 
   async function handleDeleteProduct() {
